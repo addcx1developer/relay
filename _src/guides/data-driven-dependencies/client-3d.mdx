@@ -60,7 +60,7 @@ export type Client3DModel = {
 };
 
 /**
- * @RelayResolver Client3DBar implements IClient3D
+ * @relayType Client3DBar implements IClient3D
  */
 function Client3DBar(id: DataID): ?Client3DModel {
   if (id === INVALID_ID) {
@@ -72,7 +72,7 @@ function Client3DBar(id: DataID): ?Client3DModel {
 }
 
 /**
- * @RelayResolver Client3DBar.data: Client3DData
+ * @relayField Client3DBar.data: Client3DData
  */
 function data(client3DModel: Client3DModel): Client3DData {
   return {
@@ -87,7 +87,7 @@ function data(client3DModel: Client3DModel): Client3DData {
 
 ```ts
 /**
- * @RelayResolver Client3DFoo implements IClient3D
+ * @relayType Client3DFoo implements IClient3D
  */
 function Client3DFoo(id: DataID): ?Client3DModel {
   if (id === INVALID_ID) {
@@ -99,7 +99,7 @@ function Client3DFoo(id: DataID): ?Client3DModel {
 }
 
 /**
- * @RelayResolver Client3DFoo.data: Client3DData
+ * @relayField Client3DFoo.data: Client3DData
  */
 function data(client3DModel: Client3DModel): Client3DData {
   return {
@@ -114,7 +114,7 @@ function data(client3DModel: Client3DModel): Client3DData {
 
 ```ts
 /**
- * @RelayResolver Client3DHelloWorld implements IClient3D
+ * @relayType Client3DHelloWorld implements IClient3D
  */
 function Client3DHelloWorld(id: DataID): ?Client3DModel {
   if (id === INVALID_ID) {
@@ -126,7 +126,7 @@ function Client3DHelloWorld(id: DataID): ?Client3DModel {
 }
 
 /**
- * @RelayResolver Client3DHelloWorld.data: Client3DData
+ * @relayField Client3DHelloWorld.data: Client3DData
  */
 function data(client3DModel: Client3DModel): Client3DData {
   return {
@@ -246,7 +246,7 @@ component Client3DRelayRenderer() {
 
 ## Limitations
 
-While Client 3D can offer many benefits such as a more intuitive developer experience, enhanced maintanability, and faster performance, it also has some limitations that Server 3D does not.
+While Client 3D can offer many benefits such as a more intuitive developer experience, enhanced maintainability, and faster performance, it also has some limitations that Server 3D does not.
 
 One key difference is the number of round trips required to fetch data. Server 3D requires at most two round trips: one to the server for data and one to the CDN for JavaScript. In contrast, Client 3D evaluates resolver code as part of rendering the component, which means that the client needs to render the component to discover what JavaScript code is needed. This can lead to additional round trips, especially when dealing with nested Client 3D usage.
 
